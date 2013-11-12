@@ -10,7 +10,7 @@ objects.  Since we're only using this one piece of D3, we've pulled out and
 
     d3 = require 'lib/d3-time.js'
 
-Use below for testing:
+Used below for testing:
 
     {ok, eq, deepEqual} = require 'assert'
     isEqual = deepEqual
