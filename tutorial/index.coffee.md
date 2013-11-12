@@ -8,7 +8,7 @@ We're going to use D3's date-time methods for converting date strings into date
 objects.  Since we're only using this one piece of D3, we've pulled out and
 [rolled our own](http://bl.ocks.org/7393907) time component:
 
-    d3 = require 'lib/d3-time.js'
+    d3 = require './lib/d3-time.js'
 
 Used below for testing:
 
@@ -53,7 +53,7 @@ var presidents = [
 ];
 ```
 
-    presidents = require 'presidents.json'
+    presidents = require './presidents.json'
 
 Convert strings to date objects.
 
@@ -97,6 +97,11 @@ If we group by this dimension we should have six parties total:
 
     ok parties.size() is 6
 
+The `parties` grouping can be reduced in a variety of ways. Without an
+explicit reduction, you get a count of each group by default. That is, each entry in the grouping consists of a key-value pair, where the key key is a group name (a party) and the value is the number of items in the group (the number of presidents in that party).
+
+Note how we use the `top` method, which lists the top *k* parties in our group.  If we pass `Infinity` as an argument, all items are returned.
+
     partyCount = toMap(parties.top Infinity)
 
     expected = 
@@ -108,3 +113,5 @@ If we group by this dimension we should have six parties total:
       'No Party': 1
 
     isEqual partyCount, expected
+
+
