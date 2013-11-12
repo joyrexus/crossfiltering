@@ -97,6 +97,19 @@ If we group by this dimension we should have six parties total:
 
     ok parties.size() is 6
 
+... viz.:
+
+    partyList = (p.key for p in parties.top(Infinity))
+
+    isEqual partyList, [ 
+      'Republican',
+      'Democratic',
+      'Whig',
+      'Democratic-Republican',
+      'Federalist',
+      'No Party' 
+    ]
+
 The `parties` grouping can be reduced in a variety of ways. Without an
 explicit reduction, you get a count of each group by default. That is, each entry in the grouping consists of a key-value pair, where the key key is a group name (a party) and the value is the number of items in the group (the number of presidents in that party).
 
