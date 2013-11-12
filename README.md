@@ -4,10 +4,10 @@
 
 Have a look at the ...
 
-  * [Intro](http://square.github.io/crossfilter/)
-  * [API](https://github.com/square/crossfilter/wiki/API-Reference)
-  * [Examples](http://bl.ocks.org/phoebebright/raw/3822981/)
-  * [Custom filter functions](https://github.com/square/crossfilter/pull/36)
+* [Intro](http://square.github.io/crossfilter/)
+* [API](https://github.com/square/crossfilter/wiki/API-Reference)
+* [Examples](http://bl.ocks.org/phoebebright/raw/3822981/)
+* [Custom filter functions](https://github.com/square/crossfilter/pull/36)
 
 Note that there's a dimensional charting library based on D3 and Crossfilter
 called [dc.js](http://nickqizhu.github.io/dc.js/). Looks convenient if
