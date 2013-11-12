@@ -115,3 +115,65 @@ Note how we use the `top` method, which lists the top *k* parties in our group. 
     isEqual partyCount, expected
 
 
+## Filtering
+
+Let's [filter](https://github.com/square/crossfilter/wiki/API-Reference#wiki-dimension_filter) our presidents by those who ran in the Whig party and display the resulting list of presidents [sorted](https://github.com/square/crossfilter/wiki/API-Reference#wiki-quicksort_by) by when they assumed office:
+
+    whigs = byParty.filter("Whig").top(Infinity)
+    sortByNum = crossfilter.quicksort.by (d) -> d.number
+
+    result = (p.president for p in sortByNum(whigs, lo=0, hi=whigs.length))
+
+    expected = [ 
+      'William Henry Harrison',
+      'John Tyler'
+      'Zachary Taylor'
+      'Millard Fillmore'
+    ]
+
+    isEqual result, expected
+
+Note that We have to sort the resulting `whigs` list above since the only order on this dimension is by party, whereas we want the final list to be sorted by
+presidential number.
+
+OK, let's get all parties back:
+
+    byParty.filterAll()
+
+
+## Coordinate Views
+
+We can of course add a second dimension to work in conjunction with the first.
+
+Let's create a dimension for the year a president took office ...
+
+    byDate = prez.dimension (p) -> p.took_office
+
+... and filter out presidents starting before 1900:
+
+    dateRange = [new Date(1900, 1, 1), Infinity]
+
+    byDate.filter dateRange
+
+We should find that there are 19 presidents that have taken office after 1900:
+
+    modernPrez = byDate.bottom(Infinity)
+    ok 19 is modernPrez.length
+
+... the first being ...
+
+    ok modernPrez[0].president is 'Theodore Roosevelt'
+
+Note that our `byParty` dimension was also updated: 
+
+    partyCount = toMap(parties.top Infinity)
+
+    expected = 
+      Republican: 11
+      Democratic: 8
+      Federalist: 0
+      Whig: 0
+      'No Party': 0
+      'Democratic-Republican': 0
+
+    isEqual partyCount, expected
