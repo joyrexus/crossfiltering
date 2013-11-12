@@ -2,7 +2,7 @@
 
 Crossfilter enables you to define dimensions on your dataset, by which you can then filter, sort, group and reduce the dataset. Crossfilter creates indices for you, making this all very fast and efficient.
 
-Below, we're working through [this tutorial](http://eng.wealthfront.com/2012/09/explore-your-multivariate-data-with-crossfilter.html).
+Below, we'll be working through [this tutorial](http://eng.wealthfront.com/2012/09/explore-your-multivariate-data-with-crossfilter.html).
 
 We're going to use D3's date-time methods for converting date strings into date
 objects.  Since we're only using this one piece of D3, we've pulled out and
