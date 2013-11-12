@@ -154,7 +154,7 @@ OK, let's get all parties back:
     byParty.filterAll()
 
 
-## Coordinate Views
+## Coordinated Views
 
 We can of course add a second dimension to work in conjunction with the first.
 
