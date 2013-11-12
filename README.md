@@ -8,5 +8,7 @@ Have a look at ...
   * [API](https://github.com/square/crossfilter/wiki/API-Reference)
   * [Examples](http://bl.ocks.org/phoebebright/raw/3822981/)
   * [Custom filter functions](https://github.com/square/crossfilter/pull/36)
+  * [dc.js](http://nickqizhu.github.io/dc.js/) - dimensional charting based on
+    D3 and crossfilter
 
 Currently [working through](tutorial/index.coffee.md) [this tutorial](http://eng.wealthfront.com/2012/09/explore-your-multivariate-data-with-crossfilter.html).
