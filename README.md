@@ -13,6 +13,8 @@ Note that there's a dimensional charting library based on D3 and Crossfilter
 called [dc.js](http://nickqizhu.github.io/dc.js/). Looks convenient if
 you're working on a web-based dashboard and cool with the predefined chart types.
 
+If you're dealing with categorical data (e.g., surveys), try [catcorr.js](https://github.com/deanmalmgren/catcorrjs).
+
 ---
 
 Currently [working through](tutorial/index.coffee.md) [this tutorial](http://eng.wealthfront.com/2012/09/explore-your-multivariate-data-with-crossfilter.html).
