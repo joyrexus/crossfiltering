@@ -122,7 +122,7 @@ If we group by this dimension we should have six parties total:
     ]
 
 The `parties` grouping can be reduced in a variety of ways. Without an
-explicit reduction, you get a count of each group by default. That is, each entry in the grouping consists of a key-value pair, where the key key is a group name (a party) and the value is the number of items in the group (the number of presidents in that party).
+explicit reduction, you get a count of each group by default. That is, each entry in the grouping consists of a key-value pair, where the key is a group name (a party) and the value is the number of items in the group (the number of presidents in that party).
 
 Note how we use the `top` method, which lists the top *k* parties in our group.  If we pass `Infinity` as an argument, all items are returned.
 
@@ -188,7 +188,7 @@ We should find that there are 19 presidents that have taken office after 1900:
 
     ok modernPrez[0].president is 'Theodore Roosevelt'
 
-Note that our `byParty` dimension was also updated: 
+Note how our `byParty` dimension was also updated: 
 
     partyCount = toMap(parties.top Infinity)
 
