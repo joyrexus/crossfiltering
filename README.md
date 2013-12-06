@@ -6,7 +6,7 @@ Have a look at the ...
 
 * [Intro](http://square.github.io/crossfilter/)
 * [API](https://github.com/square/crossfilter/wiki/API-Reference)
-* [Tests]()
+* [Tests](https://github.com/square/crossfilter/blob/master/test/crossfilter-test.js)
 
 
 ## Status
@@ -27,3 +27,6 @@ you're working on a web-based dashboard and cool with the predefined chart types
 
 If you're dealing with categorical data (e.g., surveys), try [catcorr.js](https://github.com/deanmalmgren/catcorrjs).
 
+If you're dealing with streaming time series, see [cube.js](https://github.com/square/cube).
+
+For inspiration on how crossfilter might be used in conjunction with a nicely structured query interface for a particular domain, check out the [Harvest](http://harvest.research.chop.edu/) [demo](http://harvest.research.chop.edu/demo/query/) demo and read the [manifesto](http://harvest.research.chop.edu/manifesto/).
