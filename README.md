@@ -29,4 +29,4 @@ If you're dealing with categorical data (e.g., surveys), try [catcorr.js](https:
 
 If you're dealing with streaming time series, see [cube.js](https://github.com/square/cube).
 
-For inspiration on how crossfilter might be used in conjunction with a nicely structured query interface for a particular domain, check out the [Harvest](http://harvest.research.chop.edu/) [demo](http://harvest.research.chop.edu/demo/query/) demo and read the [manifesto](http://harvest.research.chop.edu/manifesto/).
+For inspiration on how crossfilter might be used in conjunction with a nicely structured query interface for a particular domain, check out the [Harvest](http://harvest.research.chop.edu/) [demo](http://harvest.research.chop.edu/demo/query/) and read the [manifesto](http://harvest.research.chop.edu/manifesto/).
