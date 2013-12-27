@@ -11,12 +11,11 @@ Have a look at the ...
 
 ## Status
 
-So far we've [worked through](tutorial/index.coffee.md) [this tutorial](http://eng.wealthfront.com/2012/09/explore-your-multivariate-data-with-crossfilter.html).
+So far we've [worked through](tutorial/index.coffee.md) [this tutorial](http://eng.wealthfront.com/2012/09/explore-your-multivariate-data-with-crossfilter.html) and demonstrated how to [filter by regex](examples/regex-filter.coffee.md).
 
-Supplement the tutorial with examples from the [tests](https://github.com/square/crossfilter/blob/master/test/crossfilter-test.js) as well as a few [custom filters](https://github.com/square/crossfilter/pull/36):
+We should incorporate select examples from the [tests](https://github.com/square/crossfilter/blob/master/test/crossfilter-test.js) as well as a few [custom filters](https://github.com/square/crossfilter/pull/36).
 
-* [filtering by regex](https://github.com/square/crossfilter/issues/43)
-* [multi-value filtering](https://github.com/square/crossfilter/pull/36#issuecomment-14782016)
+In particular, we should provide an example of [multi-value filtering](https://github.com/square/crossfilter/pull/36#issuecomment-14782016).
 
 
 ## Related
