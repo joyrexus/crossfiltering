@@ -10,7 +10,7 @@ node package and you can install with `npm -g crossfilter`.
 Below, we'll be working through [this tutorial](http://eng.wealthfront.com/2012/09/explore-your-multivariate-data-with-crossfilter.html).
 
 
-### Preliminaries
+## Preliminaries
 
 We're going to use D3's date-time methods for converting date strings into date
 objects.  Since we're only using this one piece of D3, we've pulled out and
@@ -121,12 +121,16 @@ If we group by this dimension we should have six parties total:
       'No Party' 
     ]
 
+Note how we use the `top` method, which lists the top *k* parties in our group
+(sorted by count in descending order).  When we pass `Infinity` as an argument, all items are returned.
+
+
+## Reducing
+
 The `parties` grouping can be reduced in a variety of ways. Without an
 explicit reduction, you get a count of each group by default. That is, each entry in the grouping consists of a key-value pair, where the key is a group name (a party) and the value is the number of items in the group (the number of presidents in that party).
 
-Note how we use the `top` method, which lists the top *k* parties in our group.  If we pass `Infinity` as an argument, all items are returned.
-
-    partyCount = toMap(parties.top Infinity)
+    partyCount = toMap parties.all()
 
     expected = 
       Republican: 18
@@ -136,7 +140,37 @@ Note how we use the `top` method, which lists the top *k* parties in our group. 
       Federalist: 1
       'No Party': 1
 
-    isEqual partyCount, expected
+    isEqual expected, partyCount
+
+Now suppose we want to reduce the parties to total years in office.  The
+presidential entries in the provided dataset do not contain an attribute for
+years in office, only the date they took and left office.  However, these latter dates provide the information needed to calculate a president's years in office:
+
+    yearsPrez = (begin, end) ->
+      end ?= new Date()
+      time = end - begin    # diff in milliseconds
+      secs = time / 1000    # seconds in office
+      mins = secs / 60
+      hours = mins / 60
+      days = hours / 24
+      years = days / 365
+      Math.round years
+
+We can then use this function to [reduce](https://github.com/square/crossfilter/wiki/API-Reference#wiki-group_reduceSum) our grouping by parties to a sum of the years they held presidential office:
+
+    toYearsPrez = (d) -> yearsPrez(d.took_office, d.left_office)
+
+    totalYears = toMap parties.reduceSum(toYearsPrez).all()
+
+    expected = 
+      Democratic: 89
+      Republican: 88
+      'Democratic-Republican': 28
+      Whig: 8
+      'No Party': 8
+      Federalist: 4
+
+    isEqual expected, totalYears
 
 
 ## Filtering
@@ -188,9 +222,19 @@ We should find that there are 19 presidents that have taken office after 1900:
 
     ok modernPrez[0].president is 'Theodore Roosevelt'
 
-Note how our `byParty` dimension was also updated: 
+Note how `parties` (our `byParty` dimension) was also updated: 
 
-    partyCount = toMap(parties.top Infinity)
+    partyYears = toMap parties.all()
+
+    expected = 
+      Republican: 59
+      Democratic: 53
+      Federalist: 0
+      Whig: 0
+      'No Party': 0
+      'Democratic-Republican': 0
+
+    partyCount = toMap parties.reduceCount().all()
 
     expected = 
       Republican: 11
