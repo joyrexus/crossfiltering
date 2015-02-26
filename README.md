@@ -24,8 +24,10 @@ Note that there's a dimensional charting library based on D3 and Crossfilter
 called [dc.js](http://nickqizhu.github.io/dc.js/). Looks convenient if
 you're working on a web-based dashboard and cool with the predefined chart types.
 
+If you need to construct aggregations with crossfilter, see the [reductio](http://esjewett.com/blog/reductio) library.  It helps build up aggregation functions that work correctly and efficiently with crossfilter's model.
+
 If you're dealing with categorical data (e.g., surveys), try [catcorr.js](https://github.com/deanmalmgren/catcorrjs).
 
 If you're dealing with streaming time series, see [cube.js](https://github.com/square/cube).
 
-For inspiration on how crossfilter might be used in conjunction with a nicely structured query interface for a particular domain, check out the [Harvest](http://harvest.research.chop.edu/) [demo](http://harvest.research.chop.edu/demo/query/) and read the [manifesto](http://harvest.research.chop.edu/manifesto/).
+For inspiration on how crossfilter might be used in conjunction with a nicely structured query interface for a particular domain, check out the [Harvest](http://harvest.research.chop.edu/) [demo](http://harvest.research.chop.edu/demo/query/) and read the [manifesto](http://harvest.research.chop.edu/manifesto/).  Similarly, crossfilter enables interactive exploration of spatio-temporal data in Stanford's [Palladio](http://esjewett.com/blog/palladio) project for the digital humanities.
